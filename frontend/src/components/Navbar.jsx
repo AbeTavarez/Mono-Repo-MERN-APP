@@ -5,9 +5,13 @@ function NavBar() {
   const { currentUser, logOut } = useUser();
   return (
     <nav className="flex justify-center items-center p-5">
-      <Link to="/">
+     <div className="flex items-center space-x-4">
+       <Link to="/">
         <img src="/vine-logo.png" alt="vine logo" className="h-20" />
       </Link>
+
+      <div className="text-xl font-semibold">Sup {currentUser?.username}!</div>
+     </div>
 
       <div className="flex items-center space-x-4 ml-auto text-lg font-semibold">
         <NavLink to="/" className={({ isActive }) => isActive && "underline"}>
