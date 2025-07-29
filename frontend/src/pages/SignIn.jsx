@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { backendClient } from "../clients/backendClient";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../context/UserContext";
 
 function SignInPage() {
   const navigate = useNavigate();
-
+  const { setCurrentUser } = useUser();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -25,6 +26,9 @@ function SignInPage() {
       console.log(res.data);
 
       localStorage.setItem("social-app-token", JSON.stringify(res.data.token));
+
+      // set currentUser in context
+      setCurrentUser(res.data.user);
 
       navigate("/feed");
     } catch (error) {

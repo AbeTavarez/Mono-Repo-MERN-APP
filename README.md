@@ -4,6 +4,8 @@
 This guide explains how to deploy a monolithic MERN application on Render.com.
 
  - See live example here: <a target="_blank" href="https://simple-mern-vvd6.onrender.com">Live Site</a> (app needs to wake-up)
+
+ <img src='./mono-repo-app.png'>
  
 
 Prerequisites
