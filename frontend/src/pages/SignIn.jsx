@@ -5,7 +5,9 @@ import { useUser } from "../context/UserContext";
 
 function SignInPage() {
   const navigate = useNavigate();
+
   const { setCurrentUser } = useUser();
+  
   const [formData, setFormData] = useState({
     email: "",
     password: "",
